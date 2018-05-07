@@ -8,7 +8,7 @@ public class Backpack
 	private Pencil pencil;
 	private Ruler ruler;
 	private Textbook textbook;
-
+	static Backpack backpack;
 	private void packAndCheck()
 	{
 		// Your mission is to go to school.
@@ -19,25 +19,35 @@ public class Backpack
 
 	public static void main(String[] args)
 	{
-		new Backpack().packAndCheck();
+		Backpack backpack=new Backpack();
+		Ruler ruler=new Ruler();
+		Textbook textbook=new Textbook();
+		Pencil pencil=new Pencil();
+		
+
+		
+		
 	}
 
 	public void putInBackpack(Pencil supply)
 	{
 		this.pencil = supply;
 		log(supply);
+		backpack.putInBackpack(pencil);
 	}
 
 	public void putInBackpack(Ruler supply)
 	{
 		this.ruler = supply;
 		log(supply);
+		backpack.putInBackpack(ruler);
 	}
 
 	public void putInBackpack(Textbook supply)
 	{
 		this.textbook = supply;
 		log(supply);
+		backpack.putInBackpack(textbook);
 	}
 
 	private void log(Supply supply)
